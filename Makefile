@@ -1,5 +1,11 @@
-# filepath: /home/manuelcastiblan/academic/mlflow-deploy/mlflow-deploy/Makefile
+install:
+	python -m pip install --upgrade pip
+	pip install -r requirements.txt
+
 train:
-	python src/train.py  
+	python train.py
+
 validate:
-	python src/validate.py 
+	python validate.py
+
+ci: install train validate
